@@ -1,0 +1,34 @@
+{
+    "name": "my-vscode-extension00",
+    "displayName": "My VS Code Extension 00",
+    "description": "A simple VS Code extension for testing activation.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.96.0"
+    },
+    "main": "./src/extension.js",
+    "activationEvents": [
+        "onCommand:my-vscode-extension00.startServer",
+        "onCommand:my-vscode-extension00.stopServer"
+    ],
+    "contributes": {
+        "commands": [
+            {
+                "command": "my-vscode-extension00.startServer",
+                "title": "Start HTTP Server"
+            },
+            {
+                "command": "my-vscode-extension00.stopServer",
+                "title": "Stop HTTP Server"
+            }
+        ]    
+    },
+    "scripts": {
+        "lint": "eslint .",
+        "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.96.0",
+        "@vscode/test-electron": "^2.4.1"
+    }
+}

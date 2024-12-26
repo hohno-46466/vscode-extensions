@@ -1,0 +1,42 @@
+{
+  "name": "my-vscode-extension01",
+  "displayName": "My MQTT VSCode Extension",
+  "description": "Control VSCode using MQTT messages.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:my-vscode-extension01.startMQTT",
+    "onCommand:my-vscode-extension01.stopMQTT"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "my-vscode-extension01.startMQTT",
+        "title": "Start MQTT Client"
+      },
+      {
+        "command": "my-vscode-extension01.stopMQTT",
+        "title": "Stop MQTT Client"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "dependencies": {
+    "mqtt": "^4.3.7"
+  },
+  "devDependencies": {
+    "eslint": "^9.16.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
